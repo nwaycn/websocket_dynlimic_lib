@@ -18,24 +18,24 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
    
 ##4. call lib with c
 ``` 
-  #include "libnway_websocket.h"
-   //init library
-   if (nway_asr_init()!=0){
-      goto END;
-    }
-    
-    //call function
-        char* message=malloc(globals.nway_message_len);
-				nway_memset(message,globals.nway_message_len);
-				recStatus = nway_asr_sendmessage(rh->r_nway_sid,(void*)firstData,firstSamples,message);
-				if(recStatus == 0)
-				{
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(rh->session), SWITCH_LOG_DEBUG, "sent data\n");
-						
-				}else{
-					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(rh->session), SWITCH_LOG_ERROR, "sbb error:%s \n",message);
-					 
-				}
+#include "libnway_websocket.h"
+//init library
+if (nway_asr_init()!=0){
+   goto END;
+}
+
+ //call function
+char* message=malloc(globals.nway_message_len);
+nway_memset(message,globals.nway_message_len);
+recStatus = nway_asr_sendmessage(rh->r_nway_sid,(void*)firstData,firstSamples,message);
+if(recStatus == 0)
+{
+	switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(rh->session), SWITCH_LOG_DEBUG, "sent data\n");
+
+}else{
+	switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(rh->session), SWITCH_LOG_ERROR, "sbb error:%s \n",message);
+
+}
 ```
         
  ##5. compile c code
