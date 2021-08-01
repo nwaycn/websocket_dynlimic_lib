@@ -1,5 +1,7 @@
-## 说明   
-    这些年随着做智能外呼、智能客服比较多，公网中的讯飞、百度、阿里、腾讯的asr/tts，私网中的基于mrcp协议的各asr/tts厂商，以及各式各样的私有的sdk,webapi,websocket等等（厂商可能就比较多了，nuance、讯飞、百度、思必驰、云知声、阿里、捷通华声、谷歌、腾讯、标贝、以及各种基于tensorflow/torch/kaldi等开源训练产品生成的asr/tts),此文是基于采用websocket传输数据，之前都是用的c语言进行开发，后来感觉c在有些方面不方便，所以就用go来实现。
+## 说明  
+
+这些年随着做智能外呼、智能客服比较多，公网中的讯飞、百度、阿里、腾讯的asr/tts，私网中的基于mrcp协议的各asr/tts厂商，以及各式各样的私有的sdk,webapi,websocket等等（厂商可能就比较多了，nuance、讯飞、百度、思必驰、云知声、阿里、捷通华声、谷歌、腾讯、标贝、以及各种基于tensorflow/torch/kaldi等开源训练产品生成的asr/tts),此文是基于采用websocket传输数据，之前都是用的c语言进行开发，后来感觉c在有些方面不方便，所以就用go来实现。
+
 ## 使用
     
 ### 1. go version
