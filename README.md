@@ -17,7 +17,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  ./build.sh
    
 ##4. call lib with c
- ``` 
+``` 
   #include "libnway_websocket.h"
    //init library
    if (nway_asr_init()!=0){
@@ -36,7 +36,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 					switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(rh->session), SWITCH_LOG_ERROR, "sbb error:%s \n",message);
 					 
 				}
-				```
+```
         
  ##5. compile c code
   
