@@ -19,34 +19,50 @@ gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-23) Copyright (C) 2010 Free Software Fou
 ### 4. 在c语言代码中调用
 
 //包含头文件 
+
 #include "libnway_websocket.h"
+
+
 //初始化库
+
 if (nway_asr_init()!=0){
+
    goto END;
+   
 }
+
 
 //创建新连接
+
 char* errmsg=malloc(100);
+
 nway_memset(rh->r_nway_sid,globals.nway_sid_len);
+
 recStatus = nway_asr_connect(globals.nway_uri,rh->r_nway_sid,errmsg,"","");
-if (0 != recStatus)
-{ 
+
+if (0 != recStatus){ 
+
 }else{
+
   nway_safe_free(errmsg);
+  
 }
+
 
  //发送数据调用
+ 
 char* message=malloc(globals.nway_message_len);
+
 nway_memset(message,globals.nway_message_len);
+
 recStatus = nway_asr_sendmessage(rh->r_nway_sid,(void*)firstData,firstSamples,message);
-if(recStatus == 0)
-{
-	switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(rh->session), SWITCH_LOG_DEBUG, "sent data\n");
+
+if(recStatus == 0){
 
 }else{
-	switch_log_printf(SWITCH_CHANNEL_SESSION_LOG(rh->session), SWITCH_LOG_ERROR, "sbb error:%s \n",message);
-
+	
 }
+
 
 //当有vad即一句话说完时
 
